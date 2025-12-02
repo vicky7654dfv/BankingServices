@@ -143,14 +143,14 @@ const Header = () => {
                   className={styles.mobileDropdownItem}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Personal Banking
+                  Home Page 1
                 </a>
                 <a
                   href="/HomePage2"
                   className={styles.mobileDropdownItem}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Corporate Banking
+                  Home Page 2
                 </a>
               </div>
             )}
