@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import styles from './BankingServices.module.css';
+import styles from "../BankingServices/BankingServices.module.css";
 
 const BankingServices = () => {
   const navigate = useNavigate();
