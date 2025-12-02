@@ -1,0 +1,120 @@
+/* Base CSS */
+.catContainer {
+  width: 100%;
+  padding: 80px 40px;
+  background-color: #ffffff;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  color: #111827;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.sectionSub {
+  color: #6b7280;
+  font-size: 1.1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  padding: 30px 20px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #9d1d2c;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.iconWrapper {
+  width: 60px;
+  height: 60px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  border: 1px solid #e5e7eb;
+}
+
+.iconWrapper i {
+  font-size: 1.5rem;
+  color: #9d1d2c;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 10px;
+}
+
+.cardDesc {
+  font-size: 0.95rem;
+  color: #6b7280;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.arrowLink {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #9d1d2c;
+  text-transform: uppercase;
+}
+
+/* 1024px Media Query */
+@media (max-width: 1024px) {
+  .catContainer { padding: 60px 30px; }
+  .grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .sectionTitle { font-size: 2.2rem; }
+}
+
+/* 768px Media Query */
+@media (max-width: 768px) {
+  .catContainer { padding: 50px 20px; }
+  .sectionTitle { font-size: 2rem; }
+}
+
+/* 425.6px Media Query */
+@media (max-width: 425.6px) {
+  .grid { grid-template-columns: 1fr; }
+  .card { padding: 25px; align-items: center; text-align: center; }
+  .sectionTitle { font-size: 1.8rem; }
+}
+
+/* 375.2px Media Query */
+@media (max-width: 375.2px) {
+  .catContainer { padding: 40px 15px; }
+  .sectionTitle { font-size: 1.6rem; }
+}

@@ -1,0 +1,155 @@
+/* Base CSS */
+.container {
+  padding: 80px 40px;
+  background-color: #f9fafb;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.header h2 {
+  font-size: 2.5rem;
+  color: #111827;
+  margin-bottom: 10px;
+  font-weight: 800;
+}
+
+.header p {
+  color: #6b7280;
+  font-size: 1.1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto 80px;
+}
+
+.card {
+  background: white;
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  border-top: 4px solid transparent;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  border-top-color: #9d1d2c;
+  box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+}
+
+.iconBox {
+  font-size: 2.5rem;
+  color: #9d1d2c;
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  color: #1f2937;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.link {
+  color: #9d1d2c;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+/* App Section */
+.appSection {
+  background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+  border-radius: 20px;
+  padding: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+}
+
+.appContent h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.appContent p {
+  color: #d1d5db;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+.storeButtons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.storeBtn {
+  background: #ffffff;
+  color: #111827;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.storeBtn:hover {
+  background: #9d1d2c;
+  color: white;
+}
+
+/* 1024px Media Query */
+@media (max-width: 1024px) {
+  .container { padding: 60px 30px; }
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .header h2 { font-size: 2.2rem; }
+}
+
+/* 768px Media Query */
+@media (max-width: 768px) {
+  .container { padding: 50px 20px; }
+  .appSection { padding: 40px 20px; }
+  .appContent h3 { font-size: 1.8rem; }
+}
+
+/* 425.6px Media Query */
+@media (max-width: 425.6px) {
+  .grid { grid-template-columns: 1fr; }
+  .storeButtons { flex-direction: column; align-items: center; }
+  .storeBtn { width: 100%; max-width: 250px; justify-content: center; }
+  .header h2 { font-size: 1.8rem; }
+}
+
+/* 375.2px Media Query */
+@media (max-width: 375.2px) {
+  .container { padding: 40px 15px; }
+  .card { padding: 25px 15px; }
+}

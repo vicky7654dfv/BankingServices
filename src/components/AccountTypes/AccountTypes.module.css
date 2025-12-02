@@ -1,0 +1,149 @@
+/* Base CSS */
+.accContainer {
+  width: 100%;
+  padding: 80px 40px;
+  background-color: #f3f4f6;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #111827;
+  font-weight: 800;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center; /* Center vertically for highlighted card */
+}
+
+.card {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  text-align: center;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.highlightCard {
+  border: 2px solid #9d1d2c;
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  z-index: 2;
+}
+
+.badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #9d1d2c;
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.accName {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+.rate {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #9d1d2c;
+  margin-bottom: 5px;
+}
+
+.minBal {
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin-bottom: 30px;
+}
+
+.featureList {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.featureList li {
+  margin-bottom: 12px;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.featureList li i {
+  color: #059669; /* Green checkmark */
+}
+
+.applyBtn {
+  width: 100%;
+  padding: 14px;
+  background: #111827;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.highlightCard .applyBtn {
+  background: #9d1d2c;
+}
+
+.applyBtn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* 1024px Media Query */
+@media (max-width: 1024px) {
+  .accContainer { padding: 60px 30px; }
+  .grid { grid-template-columns: repeat(3, 1fr); gap: 15px; }
+  .card { padding: 30px 20px; }
+}
+
+/* 768px Media Query */
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr; gap: 40px; }
+  .highlightCard { transform: scale(1); }
+  .featureList { display: inline-block; }
+}
+
+/* 425.6px Media Query */
+@media (max-width: 425.6px) {
+  .accContainer { padding: 40px 20px; }
+  .title { font-size: 2rem; }
+  .rate { font-size: 1.8rem; }
+}
+
+/* 375.2px Media Query */
+@media (max-width: 375.2px) {
+  .accName { font-size: 1.3rem; }
+}

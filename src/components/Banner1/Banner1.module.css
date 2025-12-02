@@ -1,0 +1,221 @@
+/* Base Styles */
+.bannerContainer {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Dark fallback if video doesn't load */
+  background: linear-gradient(135deg, #0f0f0f 0%, #3a0a10 100%);
+  animation: fadeIn 1s ease-in-out;
+  /* Optional: Adds the red branding strip at the bottom of the banner */
+  border-bottom: 4px solid #9d1d2c;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.backgroundVideo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  z-index: 1;
+}
+
+/* Overlay for better text readability - slightly darker for banking trust */
+.bannerContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 10, 10, 0.5); 
+  z-index: 2;
+}
+
+.content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  padding: 0 2rem;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  font-family: 'Arial', sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  line-height: 1.2;
+  /* Updated to Brand Red Gradient */
+  background: linear-gradient(135deg, #ffffff 30%, #9d1d2c 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.paragraph {
+  font-size: 1.25rem;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  font-weight: 400;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #e5e7eb;
+}
+
+.ctaButton {
+  display: inline-block;
+  /* Brand Red Gradient */
+  background: linear-gradient(135deg, #9d1d2c 0%, #7a1520 100%);
+  color: #ffffff;
+  padding: 1rem 2.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  /* Red shadow */
+  box-shadow: 0 4px 15px rgba(157, 29, 44, 0.4);
+  border: 2px solid transparent;
+}
+
+.ctaButton:hover {
+  transform: translateY(-3px);
+  /* Slightly brighter red on hover */
+  box-shadow: 0 8px 25px rgba(157, 29, 44, 0.6);
+  background: linear-gradient(135deg, #b92b3a 0%, #9d1d2c 100%);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.ctaButton:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(157, 29, 44, 0.4);
+}
+
+/* 1024px Media Query */
+@media (max-width: 1024px) {
+  .bannerContainer {
+    height: 70vh;
+    min-height: 450px;
+    max-height: 700px;
+  }
+
+  .title {
+    font-size: 3rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .paragraph {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    max-width: 550px;
+  }
+
+  .ctaButton {
+    padding: 0.875rem 2.25rem;
+    font-size: 1.0625rem;
+  }
+}
+
+/* 768px Media Query */
+@media (max-width: 768px) {
+  .bannerContainer {
+    height: 60vh;
+    min-height: 400px;
+    max-height: 600px;
+  }
+
+  .content {
+    padding: 0 1.5rem;
+    max-width: 600px;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .paragraph {
+    font-size: 1rem;
+    margin-bottom: 1.75rem;
+    max-width: 500px;
+  }
+
+  .ctaButton {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+/* 425.6px Media Query */
+@media (max-width: 425.6px) {
+  .bannerContainer {
+    height: 50vh;
+    min-height: 350px;
+    max-height: 500px;
+  }
+
+  .content {
+    padding: 0 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+    margin-bottom: 0.875rem;
+  }
+
+  .paragraph {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+
+  .ctaButton {
+    padding: 0.625rem 1.75rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* 375.2px Media Query */
+@media (max-width: 375.2px) {
+  .bannerContainer {
+    height: 45vh;
+    min-height: 300px;
+    max-height: 450px;
+  }
+
+  .title {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .paragraph {
+    font-size: 0.85rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .ctaButton {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.85rem;
+  }
+}

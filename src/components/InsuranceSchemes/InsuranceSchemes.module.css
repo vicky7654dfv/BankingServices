@@ -1,0 +1,122 @@
+/* Base CSS */
+.insContainer {
+  width: 100%;
+  padding: 80px 40px;
+  background-color: #ffffff;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #111827;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #6b7280;
+  font-size: 1.1rem;
+}
+
+.list {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  padding: 30px;
+  border-radius: 12px;
+  border-left-width: 6px;
+  border-left-style: solid;
+  transition: all 0.3s ease;
+  gap: 30px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.item:hover {
+  transform: translateX(10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.iconBox {
+  font-size: 2.5rem;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  flex: 1;
+}
+
+.itemTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.itemDesc {
+  color: #6b7280;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.viewBtn {
+  padding: 10px 24px;
+  background: transparent;
+  border: 2px solid;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.viewBtn:hover {
+  background-color: #f9fafb;
+}
+
+/* 1024px Media Query */
+@media (max-width: 1024px) {
+  .insContainer { padding: 60px 30px; }
+  .title { font-size: 2.2rem; }
+}
+
+/* 768px Media Query */
+@media (max-width: 768px) {
+  .insContainer { padding: 50px 20px; }
+  .item { flex-direction: column; text-align: center; padding: 25px; gap: 15px; }
+  .item:hover { transform: translateY(-5px); }
+  .iconBox { width: auto; margin-bottom: 10px; }
+  .viewBtn { width: 100%; }
+}
+
+/* 425.6px Media Query */
+@media (max-width: 425.6px) {
+  .title { font-size: 1.8rem; }
+  .itemTitle { font-size: 1.3rem; }
+}
+
+/* 375.2px Media Query */
+@media (max-width: 375.2px) {
+  .insContainer { padding: 40px 15px; }
+  .title { font-size: 1.6rem; }
+}

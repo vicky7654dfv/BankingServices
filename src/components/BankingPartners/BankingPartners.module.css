@@ -1,0 +1,239 @@
+/* Base Styles */
+.container {
+  width: 100%;
+  padding: 80px 20px;
+  background-color: #ffffff; /* White background to contrast with grey sections */
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  font-size: 1.15rem;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  /* Creates a responsive grid that fits as many columns as possible */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto 60px;
+}
+
+.card {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+}
+
+/* Hover Effect: Lift and Border Color */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  border-color: #9d1d2c; /* Brand Red border on hover */
+  background: #ffffff;
+}
+
+/* Logo Styling */
+.logoPlaceholder {
+  margin-bottom: 12px;
+  opacity: 0.6; /* Grayscale/Faded look by default */
+  transition: all 0.3s ease;
+  filter: grayscale(100%);
+}
+
+.logoText {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #374151;
+  font-family: 'Times New Roman', serif; /* Serif font looks more "Bank-like" */
+}
+
+/* On hover, make logo fully visible/colored */
+.card:hover .logoPlaceholder {
+  opacity: 1;
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+.card:hover .logoText {
+  color: #111827;
+}
+
+.category {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+/* Footer / CTA Section */
+.footer {
+  text-align: center;
+  padding-top: 40px;
+  border-top: 1px solid #f3f4f6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.footer p {
+  color: #4b5563;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.ctaButton {
+  background-color: transparent;
+  color: #9d1d2c;
+  border: 2px solid #9d1d2c;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ctaButton:hover {
+  background-color: #9d1d2c;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(157, 29, 44, 0.2);
+}
+
+/* =================================================================
+   MEDIA QUERIES 
+   (Strict adherence to your requested breakpoints)
+================================================================= */
+
+/* 1024px Media Query */
+@media (max-width: 1024px) {
+  .container {
+    padding: 60px 20px;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .grid {
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+/* 768px Media Query */
+@media (max-width: 768px) {
+  .container {
+    padding: 50px 16px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* Force 2 columns on tablet */
+    gap: 16px;
+  }
+
+  .card {
+    padding: 30px 15px;
+  }
+
+  .logoText {
+    font-size: 1.25rem;
+  }
+}
+
+/* 425.6px Media Query */
+@media (max-width: 425.6px) {
+  .container {
+    padding: 40px 12px;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr; /* 1 Column on mobile */
+    gap: 16px;
+  }
+
+  .card {
+    flex-direction: row; /* Horizontal layout on mobile saves vertical space */
+    justify-content: space-between;
+    padding: 20px;
+    text-align: left;
+  }
+
+  .logoPlaceholder {
+    margin-bottom: 0;
+  }
+
+  .logoText {
+    font-size: 1.1rem;
+  }
+
+  .ctaButton {
+    width: 100%;
+    padding: 12px;
+  }
+}
+
+/* 375.2px Media Query */
+@media (max-width: 375.2px) {
+  .container {
+    padding: 30px 10px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .category {
+    font-size: 0.75rem;
+  }
+}

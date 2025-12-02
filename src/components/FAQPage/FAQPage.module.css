@@ -1,0 +1,258 @@
+/* =========================================
+   1. Normal CSS (Desktop / Base)
+   ========================================= */
+
+.faqWrap {
+  padding: 80px 20px;
+  /* Light Grey Background for Banking Theme */
+  background-color: #f9fafb;
+  min-height: 100vh;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Header Section */
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.subTitle {
+  color: #9d1d2c; /* Brand Red */
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.mainTitle {
+  color: #111827; /* Dark Grey/Black */
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.accent {
+  color: #9d1d2c; /* Brand Red */
+}
+
+.description {
+  color: #6b7280; /* Muted Grey */
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* Category Section */
+.categorySection {
+  margin-bottom: 50px;
+}
+
+.catTitle {
+  color: #1f2937;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e5e7eb;
+  display: inline-block;
+}
+
+/* Accordion Styles */
+.accordionGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.accordionItem {
+  background: #ffffff; 
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.accordionItem:hover {
+  border-color: #9d1d2c; /* Red border on hover */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.activeItem {
+  background: #fff5f5; /* Very light red background for active */
+  border-color: #9d1d2c;
+}
+
+.accordionHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.questionText {
+  color: #1f2937;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding-right: 20px;
+  transition: color 0.3s ease;
+}
+
+.activeItem .questionText {
+  color: #9d1d2c; /* Red text when active */
+}
+
+.icon {
+  color: #9d1d2c;
+  font-size: 1rem;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+/* Animation for the body */
+.accordionBody {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
+}
+
+.answerContent {
+  padding: 0 25px 25px 25px;
+}
+
+.answerContent p {
+  color: #4b5563; /* Grey text for answer */
+  line-height: 1.7;
+  font-size: 0.95rem;
+  margin: 0;
+  padding-top: 10px;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* =========================================
+   2. 1024px Media Query
+   ========================================= */
+@media (max-width: 1024px) {
+  .faqWrap {
+    padding: 60px 30px;
+  }
+
+  .mainTitle {
+    font-size: 2.5rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .catTitle {
+    font-size: 1.3rem;
+  }
+}
+
+/* =========================================
+   3. 768px Media Query
+   ========================================= */
+@media (max-width: 768px) {
+  .faqWrap {
+    padding: 50px 20px;
+  }
+
+  .mainTitle {
+    font-size: 2rem;
+  }
+
+  .questionText {
+    font-size: 1rem;
+  }
+
+  .accordionHeader {
+    padding: 18px 20px;
+  }
+
+  .answerContent {
+    padding: 0 20px 20px 20px;
+  }
+}
+
+/* =========================================
+   4. 425.6px Media Query
+   ========================================= */
+@media (max-width: 425.6px) {
+  .header {
+    margin-bottom: 40px;
+  }
+
+  .subTitle {
+    font-size: 0.8rem;
+  }
+
+  .mainTitle {
+    font-size: 1.8rem;
+  }
+
+  .questionText {
+    font-size: 0.95rem;
+  }
+
+  .catTitle {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    width: 100%;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .accordionHeader {
+    padding: 15px;
+  }
+
+  .answerContent {
+    padding: 0 15px 15px 15px;
+  }
+}
+
+/* =========================================
+   5. 375.2px Media Query
+   ========================================= */
+@media (max-width: 375.2px) {
+  .faqWrap {
+    padding: 40px 15px;
+  }
+
+  .mainTitle {
+    font-size: 1.6rem;
+  }
+
+  .questionText {
+    font-size: 0.9rem;
+  }
+  
+  .icon {
+    font-size: 0.9rem;
+  }
+  
+  .answerContent p {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,121 @@
+/* Base CSS */
+.digiContainer {
+  width: 100%;
+  padding: 80px 40px;
+  background-color: #f3f4f6; /* Light Grey to contrast with white sections */
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.header h2 {
+  font-size: 2.5rem;
+  color: #111827;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.header p {
+  color: #6b7280;
+  font-size: 1.1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.item {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid #e5e7eb;
+}
+
+.item:hover {
+  border-color: #9d1d2c;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.iconCircle {
+  width: 60px;
+  height: 60px;
+  background-color: #fef2f2; /* Light Red BG */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #9d1d2c;
+  flex-shrink: 0;
+}
+
+.itemContent h4 {
+  font-size: 1.1rem;
+  color: #1f2937;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.itemContent p {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.arrow {
+  margin-left: auto;
+  font-size: 1.2rem;
+  color: #d1d5db;
+  transition: transform 0.3s;
+}
+
+.item:hover .arrow {
+  color: #9d1d2c;
+  transform: translateX(5px);
+}
+
+/* 1024px Media Query */
+@media (max-width: 1024px) {
+  .digiContainer { padding: 60px 30px; }
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .header h2 { font-size: 2.2rem; }
+}
+
+/* 768px Media Query */
+@media (max-width: 768px) {
+  .digiContainer { padding: 50px 20px; }
+  .item { flex-direction: column; text-align: center; padding: 25px; }
+  .iconCircle { margin-bottom: 10px; }
+  .arrow { display: none; }
+}
+
+/* 425.6px Media Query */
+@media (max-width: 425.6px) {
+  .grid { grid-template-columns: 1fr; }
+  .header h2 { font-size: 1.8rem; }
+}
+
+/* 375.2px Media Query */
+@media (max-width: 375.2px) {
+  .digiContainer { padding: 40px 15px; }
+  .item { padding: 20px; }
+}
