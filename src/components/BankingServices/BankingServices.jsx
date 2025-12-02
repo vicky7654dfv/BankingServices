@@ -5,7 +5,6 @@ import styles from "./BankingServices.module.css";
 const BankingServices = () => {
   const navigate = useNavigate();
   
-  // Local state only - No Context/Footer dependency
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedType, setSelectedType] = useState("All");
   const [sortOrder, setSortOrder] = useState("default");
