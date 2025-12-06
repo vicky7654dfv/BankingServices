@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { BrowserRouter, HashRouter, Route, Routes, useLocation } from "react-router-dom";
 import AOS from "aos";
 import { useEffect } from "react";
 import "aos/dist/aos.css";
@@ -65,11 +65,11 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <CategoryProvider>
         <RouterContainer />
       </CategoryProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
