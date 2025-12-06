@@ -11,7 +11,7 @@ export default function Contact() {
     e.preventDefault();
     // Simulate form submission
     alert("Thank you for contacting SecureBank. Our support team will respond within 24 hours.");
-    navigate("/Error");
+    navigate("Error");
   };
 
   const handleMapClick = () => {
@@ -22,7 +22,7 @@ export default function Contact() {
   };
 
   const handleSocialMediaClick = () => {
-    navigate("/Error");
+    navigate("Error");
   };
 
   const handlePhoneInput = (e) => {

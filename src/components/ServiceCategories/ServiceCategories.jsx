@@ -41,7 +41,7 @@ const ServiceCategories = () => {
       
       <div className={styles.grid}>
         {categories.map((cat) => (
-          <div key={cat.id} className={styles.card} onClick={() => navigate('/Error')}>
+          <div key={cat.id} className={styles.card} onClick={() => navigate('Error')}>
             <div className={styles.iconWrapper}>
               <i className={cat.icon}></i>
             </div>

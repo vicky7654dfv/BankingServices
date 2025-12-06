@@ -45,13 +45,13 @@ const Header = () => {
   }, [isMobileMenuOpen]);
 
   const navLinks = [
-    { name: "About Us", href: "/About" },
-    { name: "Dashboard", href: "/Dashboard" },
-    { name: "Services", href: "/Services" },
-    { name: "FAQ", href: "/FAQ" },
-    { name: "Contact", href: "/Contact" },
-    { name: "SignUp", href: "/SignUp" },
-    { name: "Login", href: "/Login" },
+    { name: "About Us", href: "About" },
+    { name: "Dashboard", href: "Dashboard" },
+    { name: "Services", href: "Services" },
+    { name: "FAQ", href: "FAQ" },
+    { name: "Contact", href: "Contact" },
+    { name: "SignUp", href: "SignUp" },
+    { name: "Login", href: "Login" },
   ];
 
   return (
@@ -84,7 +84,7 @@ const Header = () => {
                 <a href="/" className={styles.dropdownItem}>
                   Home Page 1
                 </a>
-                <a href="/HomePage2" className={styles.dropdownItem}>
+                <a href="HomePage2" className={styles.dropdownItem}>
                   Home Page 2
                 </a>
               </div>
@@ -146,7 +146,7 @@ const Header = () => {
                   Home Page 1
                 </a>
                 <a
-                  href="/HomePage2"
+                  href="HomePage2"
                   className={styles.mobileDropdownItem}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >

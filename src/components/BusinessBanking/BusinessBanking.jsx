@@ -32,7 +32,7 @@ const BusinessBanking = () => {
           
           <ul className={styles.serviceList}>
             {services.map((item, index) => (
-              <li key={index} onClick={() => navigate('/Error')}>
+              <li key={index} onClick={() => navigate('Error')}>
                 <i className="fa-solid fa-check-circle"></i> {item}
               </li>
             ))}

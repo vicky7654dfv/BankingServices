@@ -18,10 +18,10 @@ const ServicesHero = () => {
             landscape. Experience banking without borders.
           </p>
           <div className={styles.btnGroup}>
-            <button className={styles.primaryBtn} onClick={() => navigate('/Error')}>
+            <button className={styles.primaryBtn} onClick={() => navigate('Error')}>
               Open Account
             </button>
-            <button className={styles.secondaryBtn} onClick={() => navigate('/Contact')}>
+            <button className={styles.secondaryBtn} onClick={() => navigate('Contact')}>
               Contact Support
             </button>
           </div>
