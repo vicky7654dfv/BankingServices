@@ -53,7 +53,7 @@ const AccountTypes = () => {
                 <li key={idx}><i className="fa-solid fa-check"></i> {feat}</li>
               ))}
             </ul>
-            <button className={styles.applyBtn} onClick={() => navigate('Error')}>
+            <button className={styles.applyBtn} onClick={() => navigate('/Error')}>
               Apply Now
             </button>
           </div>

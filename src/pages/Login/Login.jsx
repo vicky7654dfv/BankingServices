@@ -26,7 +26,7 @@ export default function Login() {
     e.preventDefault();
     // Simulate secure login
     alert(`Secure Authentication Initiated for User ID: ${form.userId}`);
-    navigate("Error");
+    navigate("/Error");
   };
 
   return (
@@ -117,7 +117,7 @@ export default function Login() {
                 <button 
                   type="button" 
                   className={Style.forgotPassword}
-                  onClick={() => navigate("Error")}
+                  onClick={() => navigate("/Error")}
                 >
                   Forgot Password?
                 </button>
@@ -135,7 +135,7 @@ export default function Login() {
                 <button
                   type="button"
                   className={Style.registerBtn}
-                  onClick={() => navigate("SignUp")}
+                  onClick={() => navigate("/SignUp")}
                 >
                   Open an Account
                 </button>

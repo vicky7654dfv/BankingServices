@@ -21,10 +21,10 @@ const HomeHero = () => {
             global business expansion, we are the partner you can trust.
           </p>
           <div className={styles.buttonGroup}>
-            <button className={styles.primaryBtn} onClick={() => navigate('Error')}>
+            <button className={styles.primaryBtn} onClick={() => navigate('/Error')}>
               Open an Account
             </button>
-            <button className={styles.secondaryBtn} onClick={() => navigate('Error')}>
+            <button className={styles.secondaryBtn} onClick={() => navigate('/Error')}>
               Learn More
             </button>
           </div>

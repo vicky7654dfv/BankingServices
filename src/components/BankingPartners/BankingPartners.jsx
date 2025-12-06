@@ -42,7 +42,7 @@ const BankingPartners = () => {
 
       <div className={styles.footer}>
         <p>Interested in becoming a corporate partner?</p>
-        <button className={styles.ctaButton} onClick={()=>{navigate("Error")}}>Contact Partnership Team</button>
+        <button className={styles.ctaButton} onClick={()=>{navigate("/Error")}}>Contact Partnership Team</button>
       </div>
     </section>
   );

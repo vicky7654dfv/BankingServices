@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Header.module.css";
 // Replace with your actual banking logo
-import logo from "../../assets/Header/logo.webp"; 
+import logo from "../../assets/Header/logo.webp";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -14,9 +15,9 @@ const Header = () => {
   const toggleHomeDropdown = () => {
     setIsHomeDropdownOpen(!isHomeDropdownOpen);
   };
-
+  const navigate = useNavigate();
   const handleLogoClick = () => {
-    window.location.href = "/";
+    navigate("/");
   };
 
   // Close mobile menu when clicking outside
@@ -45,13 +46,13 @@ const Header = () => {
   }, [isMobileMenuOpen]);
 
   const navLinks = [
-    { name: "About Us", href: "About" },
-    { name: "Dashboard", href: "Dashboard" },
-    { name: "Services", href: "Services" },
-    { name: "FAQ", href: "FAQ" },
-    { name: "Contact", href: "Contact" },
-    { name: "SignUp", href: "SignUp" },
-    { name: "Login", href: "Login" },
+    { name: "About Us", href: "#/About" },
+    { name: "Dashboard", href: "#/Dashboard" },
+    { name: "Services", href: "#/Services" },
+    { name: "FAQ", href: "#/FAQ" },
+    { name: "Contact", href: "#/Contact" },
+    { name: "SignUp", href: "#/SignUp" },
+    { name: "Login", href: "#/Login" },
   ];
 
   return (
@@ -61,11 +62,7 @@ const Header = () => {
         {/* Logo */}
         <div className={styles.logoWrapper}>
           <div className={styles.logoContainer} onClick={handleLogoClick}>
-            <img
-              src={logo}
-              alt="Banking Services"
-              className={styles.logo}
-            />
+            <img src={logo} alt="Banking Services" className={styles.logo} />
           </div>
           <span className={styles.logoText}>Banking Services</span>
         </div>
@@ -81,10 +78,10 @@ const Header = () => {
             <button className={styles.homeButton}>Home</button>
             {isHomeDropdownOpen && (
               <div className={styles.dropdownMenu}>
-                <a href="/" className={styles.dropdownItem}>
+                <a href="#/" className={styles.dropdownItem}>
                   Home Page 1
                 </a>
-                <a href="HomePage2" className={styles.dropdownItem}>
+                <a href="#/HomePage2" className={styles.dropdownItem}>
                   Home Page 2
                 </a>
               </div>
@@ -139,14 +136,14 @@ const Header = () => {
             {isHomeDropdownOpen && (
               <div className={styles.mobileDropdownMenu}>
                 <a
-                  href="/"
+                  href="#/"
                   className={styles.mobileDropdownItem}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Home Page 1
                 </a>
                 <a
-                  href="HomePage2"
+                  href="#/HomePage2"
                   className={styles.mobileDropdownItem}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >

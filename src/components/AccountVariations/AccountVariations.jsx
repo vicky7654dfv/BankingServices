@@ -21,7 +21,7 @@ const AccountVariations = () => {
 
       <div className={styles.grid}>
         {accounts.map((acc, index) => (
-          <div key={index} className={styles.card} onClick={() => navigate('Error')}>
+          <div key={index} className={styles.card} onClick={() => navigate('/Error')}>
             <div className={styles.iconBox}>
               <i className={`fa-solid ${acc.icon}`}></i>
             </div>
@@ -37,10 +37,10 @@ const AccountVariations = () => {
           <h3>Bank on the Go</h3>
           <p>Download the SecureBank App for iOS and Android.</p>
           <div className={styles.storeButtons}>
-            <button className={styles.storeBtn} onClick={() => navigate('Error')}>
+            <button className={styles.storeBtn} onClick={() => navigate('/Error')}>
               <i className="fa-brands fa-apple"></i> App Store
             </button>
-            <button className={styles.storeBtn} onClick={() => navigate('Error')}>
+            <button className={styles.storeBtn} onClick={() => navigate('/Error')}>
               <i className="fa-brands fa-google-play"></i> Play Store
             </button>
           </div>

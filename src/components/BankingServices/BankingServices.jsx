@@ -134,7 +134,7 @@ const BankingServices = () => {
   }, [searchTerm, selectedType, sortOrder]);
 
   const handleDetailsClick = () => {
-    navigate("Error"); // Simplified route
+    navigate("/Error"); // Simplified route
   };
 
   const handleCategoryChange = (category) => {

@@ -23,7 +23,7 @@ export default function Banner1() {
           We provide secure, seamless, and smart banking solutions 
           tailored to your personal and business needs.
         </p>
-        <Link to="Error" className={Style.ctaButton}>Open Account</Link>
+        <Link to="/Error" className={Style.ctaButton}>Open Account</Link>
       </div>
     </div>
   );

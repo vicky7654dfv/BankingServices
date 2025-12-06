@@ -40,15 +40,15 @@ function RouterContainer() {
 
       <Routes>
         <Route path="/" element={<HomePage1 />} />
-        <Route path="About" element={<About />} />
-        <Route path="Services" element={<Services />} />
-        <Route path="Contact" element={<Contact />} />
-        <Route path="SignUp" element={<SignUp />} />
-        <Route path="Login" element={<Login />} />
-        <Route path="FAQ" element={<FAQ />} />
-        <Route path="DashBoard" element={<Dashboard />} />
-        <Route path="Error" element={<Error />} />
-        <Route path="HomePage2" element={<HomePage2 />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/Services" element={<Services />} />
+        <Route path="/Contact" element={<Contact />} />
+        <Route path="/SignUp" element={<SignUp />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/FAQ" element={<FAQ />} />
+        <Route path="/DashBoard" element={<Dashboard />} />
+        <Route path="/Error" element={<Error />} />
+        <Route path="/HomePage2" element={<HomePage2 />} />
       </Routes>
     </>
   );

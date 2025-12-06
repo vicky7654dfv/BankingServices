@@ -29,7 +29,7 @@ const FoundersTeam = () => {
             </div>
             <h3 className={styles.name}>{person.name}</h3>
             <span className={styles.role}>{person.role}</span>
-            <button className={styles.bioBtn} onClick={() => navigate('Error')}>
+            <button className={styles.bioBtn} onClick={() => navigate('/Error')}>
               View Bio
             </button>
           </div>

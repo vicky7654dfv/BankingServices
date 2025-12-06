@@ -41,7 +41,7 @@ const QuickGrid = () => {
             <p className={styles.itemText}>{item.text}</p>
             <button 
               className={styles.itemBtn} 
-              onClick={() => navigate('Error')}
+              onClick={() => navigate('/Error')}
             >
               {item.btnText} &rarr;
             </button>

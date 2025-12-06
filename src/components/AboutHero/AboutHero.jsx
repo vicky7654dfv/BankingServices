@@ -17,7 +17,7 @@ const AboutHero = () => {
             stability for millions. We combine traditional banking values with 
             modern technology to empower your financial journey.
           </p>
-          <button className={styles.ctaButton} onClick={() => navigate('Error')}>
+          <button className={styles.ctaButton} onClick={() => navigate('/Error')}>
             Read Our History
           </button>
         </div>

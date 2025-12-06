@@ -56,7 +56,7 @@ const InsuranceSchemes = () => {
             <button 
               className={styles.viewBtn} 
               style={{ color: item.color, borderColor: item.color }}
-              onClick={() => navigate('Error')}
+              onClick={() => navigate('/Error')}
             >
               View Plan
             </button>

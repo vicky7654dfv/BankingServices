@@ -55,22 +55,22 @@ export default function Footer() {
           <h4>Quick Links</h4>
           <ul>
             <li>
-              <a href="About" onClick={(e) => handleLinkClick(e, "About")}>
+              <a href="#/About" onClick={(e) => handleLinkClick(e, "/About")}>
                 About Us
               </a>
             </li>
             <li>
-              <a href="Services" onClick={(e) => handleLinkClick(e, "Services")}>
+              <a href="#/Services" onClick={(e) => handleLinkClick(e, "/Services")}>
                 Services
               </a>
             </li>
             <li>
-              <a href="Dashboard" onClick={(e) => handleLinkClick(e, "Dashboard")}>
+              <a href="#/Dashboard" onClick={(e) => handleLinkClick(e, "/Dashboard")}>
                 Dashboard
               </a>
             </li>
             <li>
-              <a href="SignUp" onClick={(e) => handleLinkClick(e, "SignUp")}>
+              <a href="#/SignUp" onClick={(e) => handleLinkClick(e, "/SignUp")}>
                 SignUp
               </a>
             </li>
@@ -82,22 +82,22 @@ export default function Footer() {
           <h4>Service Categories</h4>
           <ul>
             <li>
-              <a href="FAQ" onClick={(e) => handleLinkClick(e, "FAQ")}>
+              <a href="#/FAQ" onClick={(e) => handleLinkClick(e, "/FAQ")}>
                 FAQ
               </a>
             </li>
             <li>
-              <a href="Login" onClick={(e) => handleLinkClick(e, "Login")}>
+              <a href="#/Login" onClick={(e) => handleLinkClick(e, "/Login")}>
                 Login
               </a>
             </li>
             <li>
-              <a href="Contact" onClick={(e) => handleLinkClick(e, "Contact")}>
+              <a href="#/Contact" onClick={(e) => handleLinkClick(e, "/Contact")}>
                 Contact
               </a>
             </li>
             <li>
-              <a href="HomePage2" onClick={(e) => handleLinkClick(e, "HomePage2")}>
+              <a href="#/HomePage2" onClick={(e) => handleLinkClick(e, "/HomePage2")}>
                 Home 2
               </a>
             </li>
@@ -138,16 +138,16 @@ export default function Footer() {
             and exclusive offers. Follow us on social media.
           </p>
           <div className={Style.media}>
-            <a href="Error" className={Style.socialLink} aria-label="Twitter">
+            <a href="#/Error" className={Style.socialLink} aria-label="Twitter">
               <i className="fa-brands fa-x-twitter"></i>
             </a>
-            <a href="Error" className={Style.socialLink} aria-label="Facebook">
+            <a href="#/Error" className={Style.socialLink} aria-label="Facebook">
               <i className="fa-brands fa-facebook-f"></i>
             </a>
-            <a href="Error" className={Style.socialLink} aria-label="LinkedIn">
+            <a href="#/Error" className={Style.socialLink} aria-label="LinkedIn">
               <i className="fa-brands fa-linkedin-in"></i>
             </a>
-            <a href="Error" className={Style.socialLink} aria-label="Instagram">
+            <a href="#/Error" className={Style.socialLink} aria-label="Instagram">
               <i className="fa-brands fa-instagram"></i>
             </a>
           </div>

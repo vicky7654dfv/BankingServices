@@ -47,8 +47,8 @@ const PersonalBanking = () => {
           we have the right account for you.
         </p>
         <div className={styles.buttonGroup}>
-          <button className={styles.primaryBtn} onClick={()=>{navigate("Error")}}>Open Account</button>
-          <button className={styles.secondaryBtn} onClick={()=>{navigate("Error")}}>Compare Plans</button>
+          <button className={styles.primaryBtn} onClick={()=>{navigate("/Error")}}>Open Account</button>
+          <button className={styles.secondaryBtn} onClick={()=>{navigate("/Error")}}>Compare Plans</button>
         </div>
       </div>
 
@@ -62,7 +62,7 @@ const PersonalBanking = () => {
             </div>
             <div className={styles.cardRate}>{item.rate}</div>
             <p className={styles.cardDesc}>{item.desc}</p>
-            <button className={styles.cardLink} onClick={()=>{navigate("Error")}}>View Details &rarr;</button>
+            <button className={styles.cardLink} onClick={()=>{navigate("/Error")}}>View Details &rarr;</button>
           </div>
         ))}
       </div>

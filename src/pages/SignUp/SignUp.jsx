@@ -62,7 +62,7 @@ export default function SignUp() {
     }
     // Simulate successful registration
     alert(`Registration Successful!\nWelcome to SecureBank, ${form.name}.`);
-    navigate("Error"); // Navigate to dashboard or success page
+    navigate("/Error"); // Navigate to dashboard or success page
   };
 
   return (
@@ -244,7 +244,7 @@ export default function SignUp() {
                 <button
                   type="button"
                   className={Style.loginBtn}
-                  onClick={() => navigate("Login")}
+                  onClick={() => navigate("/Login")}
                 >
                   Log In Here
                 </button>

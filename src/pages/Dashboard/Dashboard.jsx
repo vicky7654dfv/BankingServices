@@ -217,15 +217,15 @@ const Dashboard = () => {
           </div>
           <div className={Style.headerActions}>
              {/* Notification Icon Added */}
-            <button className={Style.iconButton} onClick={() => navigate('Error')}>
+            <button className={Style.iconButton} onClick={() => navigate('/Error')}>
               <i className="fa-regular fa-bell"></i>
               <span className={Style.notificationBadge}>3</span>
             </button>
             <div className={Style.headerButtons}>
-              <button className={Style.primaryButton} onClick={() => navigate('Error')}>
+              <button className={Style.primaryButton} onClick={() => navigate('/Error')}>
                 <i className="fa-solid fa-money-bill-transfer"></i> Transfer
               </button>
-              <button className={Style.secondaryButton} onClick={() => navigate('Error')}>
+              <button className={Style.secondaryButton} onClick={() => navigate('/Error')}>
                 <i className="fa-solid fa-download"></i> Statements
               </button>
             </div>
@@ -330,7 +330,7 @@ const Dashboard = () => {
         <div className={Style.txSection}>
           <div className={Style.sectionHeader}>
             <h2 className={Style.sectionTitle}>Recent Activity</h2>
-            <button className={Style.viewAllButton} onClick={() => navigate('Error')}>View All Transactions</button>
+            <button className={Style.viewAllButton} onClick={() => navigate('/Error')}>View All Transactions</button>
           </div>
           <div className={Style.txList}>
             {recentTxns.map((tx) => (

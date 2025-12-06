@@ -23,7 +23,7 @@ const DigitalServices = () => {
 
       <div className={styles.grid}>
         {digitalItems.map((item, index) => (
-          <div key={index} className={styles.item} onClick={() => navigate('Error')}>
+          <div key={index} className={styles.item} onClick={() => navigate('/Error')}>
             <div className={styles.iconCircle}>
               <i className={`fa-solid ${item.icon}`}></i>
             </div>
