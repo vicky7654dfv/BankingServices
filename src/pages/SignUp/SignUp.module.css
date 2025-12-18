@@ -1,81 +1,102 @@
-/* Base Styles - Banking Theme (White/Red/Grey) */
+/* =========================================
+   MAIN WRAPPER & BACKGROUND
+   ========================================= */
 .mainWrapper {
-  background: #f3f4f6; /* Light Grey Banking Background */
+  background-color: #f8fafc; /* Premium Off-White */
+  background-image: 
+    radial-gradient(at 100% 0%, rgba(190, 18, 60, 0.03) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(30, 58, 138, 0.03) 0px, transparent 50%);
   min-height: 100vh;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 .signUpWrap {
   padding: 40px 20px;
-  animation: fadeIn 0.8s ease-in;
+  animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   z-index: 1;
 }
 
-/* Background accent */
 .signUpWrap::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 400px;
-  background: linear-gradient(180deg, #111827 0%, #1f2937 100%); /* Dark header area */
+  height: 350px;
+  background: #1e293b; /* Dark Header */
   pointer-events: none;
   z-index: -1;
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
+@keyframes slideUpFade {
+  from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* =========================================
+   HEADINGS
+   ========================================= */
 .pageHeading {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   color: #ffffff;
 }
 
 .pageHeading h1 {
-  font-size: 2.8rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  letter-spacing: -0.5px;
 }
 
 .pageHeading p {
   font-size: 1.1rem;
-  color: #d1d5db;
+  color: #94a3b8;
   max-width: 600px;
   margin: 0 auto;
+  line-height: 1.6;
 }
 
+/* =========================================
+   MAIN CARD CONTAINER
+   ========================================= */
 .signUpContainer {
   max-width: 1100px;
   margin: 0 auto;
   background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+  border-radius: 24px;
+  /* Premium Diffused Shadow */
+  box-shadow: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+    0 8px 10px -6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 1.3fr;
   min-height: 650px;
+  border: 1px solid rgba(0,0,0,0.05);
 }
 
-/* Image Section (Left) */
+/* =========================================
+   LEFT COLUMN (BRANDING)
+   ========================================= */
 .imageSection {
   position: relative;
-  /* Banking Red Gradient */
-  background: linear-gradient(135deg, #9d1d2c 0%, #7f1d2a 100%);
+  /* Deep Rich Gradient */
+  background: linear-gradient(135deg, #881337 0%, #4c0519 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px;
+  padding: 60px;
   color: #ffffff;
 }
 
 .imageContent {
   text-align: center;
   z-index: 2;
+  position: relative;
 }
 
 .logoWrapper {
@@ -83,54 +104,65 @@
 }
 
 .logoImage {
+  /* Kept for CSS consistency if logo re-appears */
   width: 160px;
   height: auto;
   object-fit: contain;
-  /* REMOVED: filter: brightness(0) invert(1); */
-  /* Added drop shadow for visibility */
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0 10px 10px rgba(0,0,0,0.5));
 }
 
 .imageOverlay h3 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 700;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
 }
 
 .imageOverlay p {
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 1.05rem;
+  line-height: 1.7;
   max-width: 320px;
-  margin: 0 auto 30px;
+  margin: 0 auto 40px;
   opacity: 0.9;
+  font-weight: 400;
 }
 
 .featureList {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 16px;
   align-items: center;
 }
 
 .featureList span {
   background: rgba(255, 255, 255, 0.1);
-  padding: 10px 20px;
-  border-radius: 30px;
+  padding: 12px 24px;
+  border-radius: 50px;
   font-size: 0.9rem;
+  font-weight: 600;
   border: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   width: fit-content;
+  backdrop-filter: blur(5px);
+  transition: transform 0.3s ease;
+}
+
+.featureList span:hover {
+  transform: translateX(5px);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .featureList span i {
-  color: #fbbf24; /* Gold accent for icons */
+  color: #fcd34d; /* Gold Icon */
 }
 
-/* Form Section (Right) */
+/* =========================================
+   RIGHT COLUMN (FORM)
+   ========================================= */
 .formSection {
-  padding: 50px;
+  padding: 60px;
   display: flex;
   align-items: center;
   background: #ffffff;
@@ -138,25 +170,26 @@
 
 .signUpForm {
   width: 100%;
-  max-width: 450px;
+  max-width: 480px;
   margin: 0 auto;
 }
 
 .signUpForm h2 {
-  color: #111827;
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-bottom: 5px;
+  color: #1e293b;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
 }
 
 .formSubtext {
-  color: #6b7280;
-  margin-bottom: 30px;
-  font-size: 0.95rem;
+  color: #64748b;
+  margin-bottom: 40px;
+  font-size: 1rem;
 }
 
 .formGroup {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   display: flex;
   flex-direction: column;
 }
@@ -164,47 +197,54 @@
 .formRow {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 15px;
+  gap: 20px;
 }
 
 .formGroup label {
-  color: #374151;
+  color: #334155;
   margin-bottom: 8px;
   font-size: 0.9rem;
   font-weight: 600;
 }
 
 .required {
-  color: #9d1d2c;
+  color: #e11d48;
 }
 
+/* Inputs - Soft UI Look */
 .inputField {
   width: 100%;
-  padding: 12px 16px;
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
+  padding: 14px 18px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
   font-size: 1rem;
-  color: #111827;
-  transition: all 0.3s ease;
+  color: #1e293b;
+  transition: all 0.2s ease;
   font-family: inherit;
 }
 
-.inputField::placeholder {
-  color: #9ca3af;
+.inputField:hover {
+  background: #fff;
+  border-color: #cbd5e1;
 }
 
 .inputField:focus {
+  background: #fff;
   outline: none;
-  border-color: #9d1d2c;
-  box-shadow: 0 0 0 3px rgba(157, 29, 44, 0.1);
+  border-color: #9f1239; /* Rose Focus */
+  box-shadow: 0 0 0 4px rgba(159, 18, 57, 0.1);
 }
 
-/* Select arrow fix */
+.inputField::placeholder {
+  color: #94a3b8;
+}
+
+/* Select Arrow */
 select.inputField {
   cursor: pointer;
   appearance: none;
-  background-image: url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'><path fill='%23374151' d='M2 0L0 2h4zm0 5L0 3h4z'/></svg>");
+  background-image: url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'><path fill='%23334155' d='M2 0L0 2h4zm0 5L0 3h4z'/></svg>");
   background-repeat: no-repeat;
   background-position: right 16px center;
   background-size: 10px;
@@ -212,80 +252,92 @@ select.inputField {
 
 /* Password Strength */
 .passwordRequirements {
-  background: #f9fafb;
-  padding: 15px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  border: 1px solid #e5e7eb;
+  background: #f8fafc;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  border: 1px solid #e2e8f0;
 }
 
 .reqTitle {
-  color: #374151;
+  color: #475569;
   font-size: 0.85rem;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .reqGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns layout */
-  gap: 8px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
 }
 
 .reqGrid span {
   font-size: 0.75rem;
   display: flex;
   align-items: center;
-  gap: 5px;
-  font-weight: 500;
+  gap: 6px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 4px;
 }
 
 .valid {
-  color: #059669; /* Green */
+  color: #059669; /* Green Text */
+  background: rgba(5, 150, 105, 0.1);
 }
 
 .invalid {
-  color: #9ca3af; /* Grey */
+  color: #94a3b8; /* Grey Text */
+  background: transparent;
 }
 
 /* Terms Checkbox */
 .termsWrapper {
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
 .checkboxLabel {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
+  gap: 12px;
   cursor: pointer;
 }
 
 .checkboxLabel input[type="checkbox"] {
-  margin-top: 3px;
-  accent-color: #9d1d2c;
+  margin-top: 4px;
+  width: 18px;
+  height: 18px;
+  accent-color: #9f1239;
 }
 
 .checkboxLabel span {
-  font-size: 0.85rem;
-  color: #6b7280;
-  line-height: 1.4;
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.5;
 }
 
 .checkboxLabel a {
-  color: #9d1d2c;
+  color: #9f1239;
   text-decoration: none;
   font-weight: 600;
+  transition: color 0.2s;
+}
+
+.checkboxLabel a:hover {
+  color: #881337;
+  text-decoration: underline;
 }
 
 /* Buttons */
 .submitBtn {
   width: 100%;
-  padding: 14px;
-  background: #9d1d2c; /* Brand Red */
+  padding: 18px;
+  background: linear-gradient(135deg, #be123c 0%, #9f1239 100%);
   color: #ffffff;
   border: none;
-  border-radius: 8px;
-  font-size: 1rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -293,39 +345,45 @@ select.inputField {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  box-shadow: 0 4px 10px rgba(157, 29, 44, 0.3);
+  box-shadow: 0 10px 20px -10px rgba(190, 18, 60, 0.5);
 }
 
 .submitBtn:hover {
-  background: #7f1d2a;
   transform: translateY(-2px);
+  box-shadow: 0 15px 25px -10px rgba(190, 18, 60, 0.6);
+  background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
 }
 
 .loginLinkWrapper {
   text-align: center;
-  margin-top: 25px;
+  margin-top: 30px;
   font-size: 0.95rem;
-  color: #4b5563;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
 .loginBtn {
   background: transparent;
-  color: #9d1d2c;
+  color: #9f1239;
   border: none;
   font-size: 0.95rem;
   font-weight: 700;
   cursor: pointer;
-  margin-left: 5px;
+  text-decoration: none;
+  padding: 0;
+}
+
+.loginBtn:hover {
+  color: #881337;
   text-decoration: underline;
   text-underline-offset: 4px;
 }
 
-.loginBtn:hover {
-  color: #7f1d2a;
-}
-
 /* =========================================
-   MEDIA QUERIES (STRICT ORDER)
+   MEDIA QUERIES (NO STRUCTURE CHANGE)
    ========================================= */
 
 /* 1024px */
@@ -335,15 +393,15 @@ select.inputField {
     grid-template-columns: 40% 60%;
   }
   
-  .formSection { padding: 30px; }
-  .imageSection { padding: 30px; }
+  .formSection { padding: 40px; }
+  .imageSection { padding: 40px; }
   .pageHeading h1 { font-size: 2.5rem; }
   .reqGrid { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* 768px */
 @media (max-width: 768px) {
-  .signUpWrap { padding: 20px 15px; }
+  .signUpWrap { padding: 30px 15px; }
   
   .signUpContainer {
     grid-template-columns: 1fr; /* Stack Vertically */
@@ -352,38 +410,38 @@ select.inputField {
   
   /* Make image section a smaller header on mobile */
   .imageSection {
-    padding: 30px 20px;
+    padding: 40px 30px;
     min-height: auto;
   }
   
-  .imageOverlay h3 { font-size: 1.5rem; }
-  .featureList { display: none; } /* Hide features to save space on mobile */
+  .imageOverlay h3 { font-size: 1.8rem; }
+  .featureList { display: none; } /* Hide features */
   
-  .formSection { padding: 30px 20px; }
+  .formSection { padding: 40px 30px; }
   .formRow { grid-template-columns: 1fr; }
   
-  .pageHeading h1 { font-size: 2rem; color: #fff; }
-  .pageHeading p { color: #e5e7eb; }
+  .pageHeading h1 { font-size: 2rem; }
+  .pageHeading p { color: #cbd5e1; }
 }
 
 /* 425.6px */
 @media (max-width: 425.6px) {
-  .signUpWrap { padding: 10px 5px; }
-  .formSection { padding: 20px 15px; }
+  .signUpWrap { padding: 20px 5px; }
+  .formSection { padding: 30px 20px; }
   
   .pageHeading h1 { font-size: 1.8rem; }
   .pageHeading p { font-size: 0.9rem; }
   
-  .signUpForm h2 { font-size: 1.5rem; }
-  .inputField { padding: 10px 14px; font-size: 0.95rem; }
+  .signUpForm h2 { font-size: 1.6rem; }
+  .inputField { padding: 12px 14px; font-size: 0.95rem; }
 }
 
 /* 375.2px */
 @media (max-width: 375.2px) {
   .pageHeading h1 { font-size: 1.6rem; }
-  .imageOverlay h3 { font-size: 1.2rem; }
+  .imageOverlay h3 { font-size: 1.4rem; }
   
-  .submitBtn { padding: 12px; font-size: 0.95rem; }
+  .submitBtn { padding: 14px; font-size: 1rem; }
   
   .reqGrid { grid-template-columns: 1fr; } /* Stack requirements */
 }

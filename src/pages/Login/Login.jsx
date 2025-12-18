@@ -3,7 +3,6 @@ import Style from "./Login.module.css";
 import { useNavigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-import logo from "../../assets/Header/logo.webp"; // Ensure this path is correct
 
 export default function Login() {
   const navigate = useNavigate();
@@ -43,11 +42,8 @@ export default function Login() {
           {/* Left Column: Branding Section */}
           <div className={Style.imageSection}>
             <div className={Style.imageWrapper}>
-              <img 
-                src={logo} 
-                alt="SecureBank Logo" 
-                className={Style.logoImage}
-              />
+              {/* Logo Removed Here */}
+              
               <div className={Style.imageOverlay}>
                 <h3>Welcome Back</h3>
                 <p>

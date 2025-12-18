@@ -1,35 +1,44 @@
-/* Base Styles - Banking Theme */
+/* =========================================
+   MAIN WRAPPER & BACKGROUND
+   ========================================= */
 .mainWrapper {
-  background: #f3f4f6; /* Light Banking Grey */
+  background-color: #f8fafc; /* Premium Off-White */
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(190, 18, 60, 0.03) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(30, 58, 138, 0.03) 0px, transparent 50%);
   min-height: 100vh;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 .loginWrap {
   padding: 40px 20px;
-  animation: fadeIn 0.8s ease-in;
+  animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   z-index: 1;
 }
 
-/* Background accent glow */
 .loginWrap::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 400px;
-  /* Dark Header Background */
-  background: linear-gradient(180deg, #111827 0%, #1f2937 100%);
+  height: 350px;
+  background: #1e293b; /* Dark Navy Header Background */
   pointer-events: none;
   z-index: -1;
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
+@keyframes slideUpFade {
+  from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* =========================================
+   HEADINGS
+   ========================================= */
 .pageHeading {
   text-align: center;
   margin-bottom: 50px;
@@ -37,40 +46,50 @@
 }
 
 .pageHeading h1 {
-  font-size: 2.8rem;
-  font-weight: 700;
+  font-size: 3rem;
+  font-weight: 800;
   margin-bottom: 15px;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  letter-spacing: -0.5px;
 }
 
 .pageHeading p {
   font-size: 1.1rem;
-  color: #d1d5db;
+  color: #94a3b8;
   max-width: 600px;
   margin: 0 auto;
+  line-height: 1.6;
 }
 
+/* =========================================
+   MAIN CARD CONTAINER
+   ========================================= */
 .loginContainer {
   max-width: 1000px;
   margin: 0 auto;
   background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+  border-radius: 24px;
+  /* Premium Diffused Shadow */
+  box-shadow: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+    0 8px 10px -6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   display: grid;
-  grid-template-columns: 1fr 1.1fr;
+  grid-template-columns: 1fr 1.2fr; /* Slightly wider form area */
   min-height: 600px;
+  border: 1px solid rgba(0,0,0,0.05);
 }
 
-/* Image Section (Left) */
+/* =========================================
+   LEFT COLUMN (DECORATIVE)
+   ========================================= */
 .imageSection {
   position: relative;
-  /* Brand Red Gradient */
-  background: linear-gradient(135deg, #9d1d2c 0%, #7f1d2a 100%);
+  /* Deep Rich Gradient */
+  background: linear-gradient(135deg, #881337 0%, #4c0519 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px;
+  padding: 60px;
   overflow: hidden;
   color: #ffffff;
 }
@@ -79,58 +98,42 @@
   position: relative;
   z-index: 2;
   text-align: center;
-  transition: transform 0.5s ease;
-}
-
-.imageWrapper:hover {
-  transform: translateY(-5px);
-}
-
-.logoImage {
-  width: 160px;
-  height: auto;
-  object-fit: contain;
-  margin-bottom: 20px;
-  /* REMOVED INVERT FILTER as requested. 
-     Added drop shadow to make black logo visible on red background */
-  filter: drop-shadow(0 4px 6px rgba(255, 255, 255, 0.4));
-  transition: all 0.5s ease;
-}
-
-.logoImage:hover {
-  transform: scale(1.05);
 }
 
 .imageOverlay {
-  margin-top: 20px;
+  margin-top: 0;
 }
 
 .imageOverlay h3 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 700;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
 }
 
 .imageOverlay p {
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 1.05rem;
+  line-height: 1.7;
   max-width: 300px;
-  margin: 0 auto 25px;
-  opacity: 0.9;
+  margin: 0 auto 30px;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .securityBadge {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 8px 16px;
-  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 10px 20px;
+  border-radius: 30px;
   font-size: 0.85rem;
+  font-weight: 600;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* Floating Elements */
+/* Abstract Floating Orbs */
 .floatingElements {
   position: absolute;
   top: 0;
@@ -143,35 +146,37 @@
 .floatingElement1,
 .floatingElement2 {
   position: absolute;
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
   border-radius: 50%;
-  animation: floatAround 12s ease-in-out infinite;
+  filter: blur(20px);
+  animation: floatAround 10s ease-in-out infinite alternate;
 }
 
 .floatingElement1 {
-  width: 200px;
-  height: 200px;
-  top: -50px;
+  width: 300px;
+  height: 300px;
+  top: -100px;
   left: -50px;
 }
 
 .floatingElement2 {
-  width: 100px;
-  height: 100px;
-  bottom: 10%;
-  right: 10%;
-  animation-delay: 3s;
+  width: 200px;
+  height: 200px;
+  bottom: -50px;
+  right: -50px;
+  animation-delay: -5s;
 }
 
 @keyframes floatAround {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(20px, 20px); }
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(30px, 30px) scale(1.1); }
 }
 
-/* Form Section (Right) */
+/* =========================================
+   RIGHT COLUMN (FORM)
+   ========================================= */
 .formSection {
-  padding: 50px;
+  padding: 60px;
   display: flex;
   align-items: center;
   background: #ffffff;
@@ -179,31 +184,32 @@
 
 .loginForm {
   width: 100%;
-  max-width: 400px;
+  max-width: 420px;
   margin: 0 auto;
 }
 
 .loginForm h2 {
-  color: #111827;
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-bottom: 5px;
+  color: #1e293b;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
 }
 
 .subText {
-  color: #6b7280;
-  margin-bottom: 30px;
-  font-size: 0.95rem;
+  color: #64748b;
+  margin-bottom: 40px;
+  font-size: 1rem;
 }
 
 .formRow {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   display: flex;
   flex-direction: column;
 }
 
 .inputLabel {
-  color: #374151;
+  color: #334155;
   font-size: 0.9rem;
   margin-bottom: 8px;
   font-weight: 600;
@@ -211,28 +217,30 @@
 
 .inputField {
   width: 100%;
-  padding: 14px 16px;
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
+  padding: 16px 20px;
+  background: #f8fafc; /* Very light grey bg */
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
   font-size: 1rem;
-  color: #111827;
-  transition: all 0.3s ease;
+  color: #1e293b;
+  transition: all 0.2s ease;
   font-family: inherit;
 }
 
+.inputField:hover {
+  background: #fff;
+  border-color: #cbd5e1;
+}
+
 .inputField:focus {
+  background: #fff;
   outline: none;
-  border-color: #9d1d2c; /* Brand Red Focus */
-  box-shadow: 0 0 0 3px rgba(157, 29, 44, 0.1);
+  border-color: #9f1239; /* Rose/Red Focus */
+  box-shadow: 0 0 0 4px rgba(159, 18, 57, 0.1); /* Soft spread glow */
 }
 
 .inputField::placeholder {
-  color: #9ca3af;
-}
-
-.inputField:hover {
-  border-color: #9ca3af;
+  color: #94a3b8;
 }
 
 /* Form Options */
@@ -240,7 +248,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   font-size: 0.9rem;
 }
 
@@ -249,8 +257,13 @@
   align-items: center;
   gap: 10px;
   cursor: pointer;
-  color: #4b5563;
+  color: #475569;
   font-weight: 500;
+  transition: color 0.2s;
+}
+
+.rememberMe:hover {
+  color: #1e293b;
 }
 
 .rememberMe input {
@@ -258,67 +271,74 @@
 }
 
 .checkmark {
-  width: 18px;
-  height: 18px;
-  border: 2px solid #d1d5db;
-  border-radius: 4px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #cbd5e1;
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   background: #ffffff;
 }
 
 .rememberMe input:checked + .checkmark {
-  background: #9d1d2c;
-  border-color: #9d1d2c;
+  background: #9f1239;
+  border-color: #9f1239;
 }
 
 .rememberMe input:checked + .checkmark::after {
   content: '✓';
   color: white;
   font-size: 12px;
-  font-weight: bold;
+  font-weight: 800;
 }
 
 .forgotPassword {
   background: none;
   border: none;
-  color: #9d1d2c;
+  color: #9f1239;
   font-weight: 600;
   cursor: pointer;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   font-size: 0.9rem;
 }
 
 .forgotPassword:hover {
-  color: #7f1d2a;
+  color: #881337;
   text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
+/* Main Button */
 .submitBtn {
   width: 100%;
-  padding: 16px;
-  background: #9d1d2c; /* Brand Red */
+  padding: 18px;
+  background: linear-gradient(135deg, #be123c 0%, #9f1239 100%);
   color: #ffffff;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   font-size: 1.1rem;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  box-shadow: 0 4px 10px rgba(157, 29, 44, 0.3);
+  gap: 12px;
+  box-shadow: 0 10px 20px -10px rgba(190, 18, 60, 0.5);
 }
 
 .submitBtn:hover {
-  background: #7f1d2a;
   transform: translateY(-2px);
+  box-shadow: 0 15px 25px -10px rgba(190, 18, 60, 0.6);
+  background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
+}
+
+.submitBtn:active {
+  transform: translateY(0);
 }
 
 /* Register Link Area */
@@ -329,9 +349,10 @@
 .divider {
   text-align: center;
   position: relative;
-  margin: 20px 0;
-  color: #6b7280;
+  margin: 30px 0 20px;
+  color: #64748b;
   font-size: 0.85rem;
+  font-weight: 500;
 }
 
 .divider::before {
@@ -341,7 +362,7 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: #e5e7eb;
+  background: #e2e8f0;
   z-index: 1;
 }
 
@@ -354,25 +375,25 @@
 
 .registerBtn {
   width: 100%;
-  padding: 14px;
+  padding: 16px;
   background: transparent;
-  color: #111827;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  font-weight: 600;
+  color: #334155;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .registerBtn:hover {
-  background: #f9fafb;
-  border-color: #9d1d2c;
-  color: #9d1d2c;
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  color: #1e293b;
 }
 
 /* =========================================
-   MEDIA QUERIES (STRICT ORDER)
+   MEDIA QUERIES (NO STRUCTURE CHANGE)
    ========================================= */
 
 /* 1024px */
@@ -382,24 +403,14 @@
     grid-template-columns: 45% 55%;
   }
   
-  .formSection {
-    padding: 40px;
-  }
-  
-  .imageSection {
-    padding: 30px;
-  }
-  
-  .pageHeading h1 {
-    font-size: 2.5rem;
-  }
+  .formSection { padding: 40px; }
+  .imageSection { padding: 40px; }
+  .pageHeading h1 { font-size: 2.5rem; }
 }
 
 /* 768px */
 @media (max-width: 768px) {
-  .loginWrap {
-    padding: 30px 15px;
-  }
+  .loginWrap { padding: 30px 15px; }
   
   .loginContainer {
     grid-template-columns: 1fr; /* Stack vertically */
@@ -407,62 +418,34 @@
   }
   
   .imageSection {
-    padding: 40px 30px;
-    min-height: 200px;
+    padding: 50px 30px;
+    min-height: 250px;
   }
   
-  .formSection {
-    padding: 40px 30px;
-  }
+  .formSection { padding: 40px 30px; }
   
-  .pageHeading h1 {
-    font-size: 2.2rem;
-  }
+  .pageHeading h1 { font-size: 2.2rem; }
   
-  .logoImage {
-    width: 140px;
-  }
+  .imageOverlay h3 { font-size: 1.8rem; }
   
-  .imageOverlay h3 {
-    font-size: 1.5rem;
-  }
-  
-  .imageOverlay p {
-    display: none; /* Simplify on mobile */
-  }
+  .imageOverlay p { display: block; font-size: 0.95rem; }
 }
 
 /* 425.6px */
 @media (max-width: 425.6px) {
-  .loginWrap {
-    padding: 20px 10px;
-  }
+  .loginWrap { padding: 20px 10px; }
   
   .imageSection {
-    padding: 20px;
-    min-height: 150px;
-  }
-  
-  .formSection {
     padding: 30px 20px;
+    min-height: 200px;
   }
   
-  .pageHeading h1 {
-    font-size: 1.8rem;
-  }
+  .formSection { padding: 30px 20px; }
   
-  .pageHeading p {
-    font-size: 0.9rem;
-  }
+  .pageHeading h1 { font-size: 1.8rem; }
+  .pageHeading p { font-size: 0.9rem; }
   
-  .logoImage {
-    width: 120px;
-  }
-  
-  .inputField {
-    padding: 12px 14px;
-    font-size: 0.95rem;
-  }
+  .inputField { padding: 14px; font-size: 0.95rem; }
   
   .formOptions {
     flex-direction: column;
@@ -470,27 +453,16 @@
     align-items: flex-start;
   }
   
-  .forgotPassword {
-    padding-left: 28px; /* Align with text */
-  }
+  .forgotPassword { padding-left: 30px; }
 }
 
 /* 375.2px */
 @media (max-width: 375.2px) {
-  .loginWrap {
-    padding: 15px 8px;
-  }
+  .loginWrap { padding: 15px 8px; }
   
-  .formSection {
-    padding: 20px 15px;
-  }
+  .formSection { padding: 25px 15px; }
   
-  .pageHeading h1 {
-    font-size: 1.6rem;
-  }
+  .pageHeading h1 { font-size: 1.6rem; }
   
-  .submitBtn {
-    padding: 12px;
-    font-size: 1rem;
-  }
+  .submitBtn { padding: 14px; font-size: 1rem; }
 }

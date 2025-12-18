@@ -3,7 +3,6 @@ import Style from "./SignUp.module.css";
 import { useNavigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-import logo from "../../assets/Header/logo.webp"; 
 
 export default function SignUp() {
   const navigate = useNavigate();
@@ -81,13 +80,8 @@ export default function SignUp() {
           {/* Left Column: Branding / Value Prop */}
           <div className={Style.imageSection}>
             <div className={Style.imageContent}>
-              <div className={Style.logoWrapper}>
-                <img 
-                  src={logo} 
-                  alt="SecureBank Logo" 
-                  className={Style.logoImage}
-                />
-              </div>
+              {/* Logo Removed Here */}
+              
               <div className={Style.imageOverlay}>
                 <h3>Banking Reimagined</h3>
                 <p>
